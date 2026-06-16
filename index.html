@@ -6,7 +6,7 @@
 <title>밀랍랩 만들기</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
 
 *{box-sizing:border-box}
 
@@ -15,6 +15,11 @@ body{
   font-family:'Noto Sans KR', sans-serif;
   background:#fffdf4;
   color:#111;
+}
+
+.round{
+  font-family:'Dongle', sans-serif;
+  font-weight:700;
 }
 
 .page{
@@ -60,16 +65,17 @@ body{
 }
 
 .hero h1{
-  margin:10px 0;
-  font-family:'Jua', sans-serif;
-  font-size:82px;
-  line-height:1;
+  margin:0;
+  font-family:'Dongle', sans-serif;
+  font-size:112px;
+  line-height:.75;
   color:#1f4d16;
-  font-weight:400;
+  font-weight:700;
   letter-spacing:-2px;
 }
 
 .hero .sub{
+  margin-top:18px;
   font-size:22px;
   font-weight:700;
   font-style:italic;
@@ -91,11 +97,12 @@ body{
   display:inline-block;
   background:#1f4d16;
   color:white;
-  padding:8px 30px;
+  padding:6px 32px;
   border-radius:999px;
-  font-family:'Jua', sans-serif;
-  font-size:25px;
-  font-weight:400;
+  font-family:'Dongle', sans-serif;
+  font-size:34px;
+  line-height:.9;
+  font-weight:700;
   margin-bottom:18px;
 }
 
@@ -124,10 +131,11 @@ body{
 
 .buy-area h2{
   margin:0 0 18px;
-  font-family:'Jua', sans-serif;
-  font-size:36px;
+  font-family:'Dongle', sans-serif;
+  font-size:48px;
+  line-height:.9;
   color:#1f4d16;
-  font-weight:400;
+  font-weight:700;
 }
 
 .buy-btn{
@@ -136,10 +144,11 @@ body{
   color:#111;
   text-decoration:none;
   border-radius:14px;
-  padding:18px 20px;
-  font-family:'Jua', sans-serif;
-  font-size:36px;
-  font-weight:400;
+  padding:16px 20px;
+  font-family:'Dongle', sans-serif;
+  font-size:48px;
+  line-height:.9;
+  font-weight:700;
   box-shadow:0 4px 0 #e2b900;
 }
 
@@ -153,9 +162,10 @@ body{
 .section-title{
   text-align:center;
   color:#1f4d16;
-  font-family:'Jua', sans-serif;
-  font-size:38px;
-  font-weight:400;
+  font-family:'Dongle', sans-serif;
+  font-size:54px;
+  line-height:.9;
+  font-weight:700;
   margin:30px 0 22px;
 }
 
@@ -181,9 +191,8 @@ body{
   color:white;
   line-height:34px;
   text-align:center;
-  font-family:'Jua', sans-serif;
-  font-weight:400;
-  font-size:22px;
+  font-weight:900;
+  font-size:20px;
   z-index:2;
 }
 
@@ -199,9 +208,8 @@ body{
 }
 
 .step h3{
-  font-family:'Jua', sans-serif;
-  font-size:21px;
-  font-weight:400;
+  font-size:18px;
+  font-weight:900;
   margin:12px 0 7px;
   line-height:1.35;
 }
@@ -224,9 +232,10 @@ body{
 
 .complete h2{
   color:#1f4d16;
-  font-family:'Jua', sans-serif;
-  font-size:34px;
-  font-weight:400;
+  font-family:'Dongle', sans-serif;
+  font-size:48px;
+  line-height:.9;
+  font-weight:700;
   margin:0 0 14px;
 }
 
@@ -244,10 +253,10 @@ body{
   text-decoration:none;
   border-radius:12px;
   padding:15px;
-  font-family:'Jua', sans-serif;
-  font-size:22px;
-  font-weight:400;
-  line-height:1.4;
+  font-family:'Dongle', sans-serif;
+  font-size:34px;
+  line-height:.9;
+  font-weight:700;
 }
 
 .tips{
@@ -261,9 +270,10 @@ body{
 .tips h2{
   text-align:center;
   color:#1f4d16;
-  font-family:'Jua', sans-serif;
-  font-size:28px;
-  font-weight:400;
+  font-family:'Dongle', sans-serif;
+  font-size:42px;
+  line-height:.9;
+  font-weight:700;
   margin:0 0 18px;
 }
 
@@ -287,9 +297,8 @@ body{
 
 .tip b{
   display:block;
-  font-family:'Jua', sans-serif;
-  font-size:21px;
-  font-weight:400;
+  font-size:18px;
+  font-weight:900;
   margin-bottom:8px;
   color:#1f4d16;
 }
@@ -309,9 +318,8 @@ body{
   border:none;
   border-radius:999px;
   padding:12px 34px;
-  font-family:'Jua', sans-serif;
-  font-size:20px;
-  font-weight:400;
+  font-size:18px;
+  font-weight:900;
   cursor:pointer;
 }
 
@@ -322,9 +330,7 @@ body{
 }
 
 @media(max-width:700px){
-  .page{
-    max-width:430px;
-  }
+  .page{max-width:430px}
 
   .hero{
     padding:28px 16px 18px;
@@ -336,17 +342,11 @@ body{
     top:18px;
   }
 
-  .hero:before{
-    left:15px;
-  }
-
-  .hero:after{
-    right:15px;
-  }
+  .hero:before{left:15px}
+  .hero:after{right:15px}
 
   .hero h1{
-    font-size:54px;
-    letter-spacing:-1px;
+    font-size:76px;
   }
 
   .hero .small{
@@ -355,6 +355,7 @@ body{
 
   .hero .sub{
     font-size:15px;
+    margin-top:10px;
   }
 
   .prep-box{
@@ -364,9 +365,7 @@ body{
     gap:18px;
   }
 
-  .line{
-    display:none;
-  }
+  .line{display:none}
 
   .materials{
     grid-template-columns:1fr 1fr;
@@ -375,11 +374,11 @@ body{
   }
 
   .buy-area h2{
-    font-size:30px;
+    font-size:38px;
   }
 
   .buy-btn{
-    font-size:28px;
+    font-size:38px;
     padding:16px;
   }
 
@@ -395,7 +394,7 @@ body{
   }
 
   .step h3{
-    font-size:18px;
+    font-size:15px;
   }
 
   .step p{
@@ -437,9 +436,7 @@ body{
 <body>
 <div class="page">
 
-  <div class="notice">
-    📢 쿠팡 파트너스 활동의 일환으로 일정 수수료를 제공받습니다.
-  </div>
+  <div class="notice">📢 쿠팡 파트너스 활동의 일환으로 일정 수수료를 제공받습니다.</div>
 
   <section class="hero">
     <div class="small">🐝 비즈왁스로 만드는 친환경 랩</div>
@@ -476,62 +473,24 @@ body{
 
   <section class="steps">
 
-    <div class="step">
-      <div class="num">1</div>
-      <div class="img">✂️</div>
-      <h3>천을 원하는 크기로 자릅니다.</h3>
-      <p>천은 깨끗이 세탁한 후 완전히 건조하여 사용해주세요.</p>
-    </div>
+    <div class="step"><div class="num">1</div><div class="img">✂️</div><h3>천을 원하는 크기로 자릅니다.</h3><p>천은 깨끗이 세탁한 후 완전히 건조하여 사용해주세요.</p></div>
 
-    <div class="step">
-      <div class="num">2</div>
-      <div class="img">📄</div>
-      <h3>종이호일을 깔고 그 위에 천을 올립니다.</h3>
-      <p>다리미판 또는 평평한 곳에서 작업해주세요.</p>
-    </div>
+    <div class="step"><div class="num">2</div><div class="img">📄</div><h3>종이호일을 깔고 그 위에 천을 올립니다.</h3><p>다리미판 또는 평평한 곳에서 작업해주세요.</p></div>
 
-    <div class="step">
-      <div class="num">3</div>
-      <div class="img">🟡</div>
-      <h3>비즈왁스를 천 전체에 고르게 뿌립니다.</h3>
-      <p>한곳에 몰리지 않도록 얇게 뿌려주세요.</p>
-    </div>
+    <div class="step"><div class="num">3</div><div class="img">🟡</div><h3>비즈왁스를 천 전체에 고르게 뿌립니다.</h3><p>한곳에 몰리지 않도록 얇게 뿌려주세요.</p></div>
 
-    <div class="step">
-      <div class="num">4</div>
-      <div class="img">👕</div>
-      <h3>천 위를 종이호일로 덮고 다리미로 다림질합니다.</h3>
-      <p>천 전체를 천천히 눌러가며 밀랍을 녹여주세요.</p>
-    </div>
+    <div class="step"><div class="num">4</div><div class="img">👕</div><h3>천 위를 종이호일로 덮고 다리미로 다림질합니다.</h3><p>천 전체를 천천히 눌러가며 밀랍을 녹여주세요.</p></div>
 
-    <div class="step">
-      <div class="num">5</div>
-      <div class="img">🤲</div>
-      <h3>밀랍이 스며들면 종이호일을 떼어냅니다.</h3>
-      <p>천천히 조심해서 떼어내주세요.</p>
-    </div>
+    <div class="step"><div class="num">5</div><div class="img">🤲</div><h3>밀랍이 스며들면 종이호일을 떼어냅니다.</h3><p>천천히 조심해서 떼어내주세요.</p></div>
 
-    <div class="step">
-      <div class="num">6</div>
-      <div class="img">🌬️</div>
-      <h3>밀랍랩을 들어 30초 정도 흔들어 식혀주세요.</h3>
-      <p>30초 정도면 금방 굳어 바로 사용할 수 있어요.</p>
-    </div>
+    <div class="step"><div class="num">6</div><div class="img">🌬️</div><h3>밀랍랩을 들어 30초 정도 흔들어 식혀주세요.</h3><p>30초 정도면 금방 굳어 바로 사용할 수 있어요.</p></div>
 
-    <div class="step">
-      <div class="num">7</div>
-      <div class="img">✅</div>
-      <h3>완전히 식으면 완성!</h3>
-      <p>바로 사용이 가능해요.</p>
-    </div>
+    <div class="step"><div class="num">7</div><div class="img">✅</div><h3>완전히 식으면 완성!</h3><p>바로 사용이 가능해요.</p></div>
 
     <div class="complete">
       <h2>🌿 완성!</h2>
       <p>자연을 위한 작은 실천,<br>밀랍랩으로 시작해보세요.</p>
-
-      <a class="video-btn" href="여기에_영상링크_넣기" target="_blank">
-        ▶ 만드는 법<br>참고 영상 보기
-      </a>
+      <a class="video-btn" href="여기에_영상링크_넣기" target="_blank">▶ 만드는 법<br>참고 영상 보기</a>
     </div>
 
   </section>
@@ -540,30 +499,11 @@ body{
     <h2>💡 밀랍랩 사용 및 관리 Tip</h2>
 
     <div class="tip-grid">
-      <div class="tip">
-        <b>🌿 처음 사용 시</b>
-        밀랍 특유의 향이 날 수 있으나 시간이 지나면 자연스럽게 사라집니다.
-      </div>
-
-      <div class="tip">
-        <b>💧 세척</b>
-        열에 약하므로 반드시 찬물 또는 미지근한 물로 세척해주세요.
-      </div>
-
-      <div class="tip">
-        <b>〰️ 건조</b>
-        직사광선을 피해 통풍이 잘 되는 그늘에서 자연 건조해주세요.
-      </div>
-
-      <div class="tip">
-        <b>⚠️ 주의사항</b>
-        뜨거운 음식, 전자레인지, 식기세척기 사용은 피해주세요.
-      </div>
-
-      <div class="tip">
-        <b>♡ 보수</b>
-        밀랍이 벗겨졌다면 종이호일 사이에 넣고 다리미로 가볍게 다려주세요.
-      </div>
+      <div class="tip"><b>🌿 처음 사용 시</b>밀랍 특유의 향이 날 수 있으나 시간이 지나면 자연스럽게 사라집니다.</div>
+      <div class="tip"><b>💧 세척</b>열에 약하므로 반드시 찬물 또는 미지근한 물로 세척해주세요.</div>
+      <div class="tip"><b>〰️ 건조</b>직사광선을 피해 통풍이 잘 되는 그늘에서 자연 건조해주세요.</div>
+      <div class="tip"><b>⚠️ 주의사항</b>뜨거운 음식, 전자레인지, 식기세척기 사용은 피해주세요.</div>
+      <div class="tip"><b>♡ 보수</b>밀랍이 벗겨졌다면 종이호일 사이에 넣고 다리미로 가볍게 다려주세요.</div>
     </div>
   </section>
 
