@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>밀랍랩 만들기</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #f7f4ea;
+      font-family: "Noto Sans KR", sans-serif;
+      text-align: center;
+    }
+
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .poster {
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
+    .btn-area {
+      margin: 28px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .btn {
+      display: block;
+      padding: 18px 20px;
+      border-radius: 16px;
+      font-size: 22px;
+      font-weight: 800;
+      text-decoration: none;
+      color: #1f2b16;
+    }
+
+    .video-btn {
+      background: #eaf3df;
+      border: 2px solid #5c7a3c;
+    }
+
+    .buy-btn {
+      background: #ffc400;
+      border: 2px solid #d49b00;
+    }
+
+    .share-btn {
+      background: #3f6b2f;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .notice {
+      font-size: 13px;
+      color: #777;
+      margin: 24px 0 10px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- 인포그래픽 이미지 -->
+    <img src="poster.png" alt="밀랍랩 만들기 방법" class="poster" />
+
+    <div class="btn-area">
+      <!-- 만드는 법 참고 영상 링크 -->
+      <a href="영상링크넣기" target="_blank" class="btn video-btn">
+        ▶ 만드는 법 참고 영상 보기
+      </a>
+
+      <!-- 쿠팡 비즈왁스 링크 -->
+      <a href="쿠팡파트너스링크넣기" target="_blank" class="btn buy-btn">
+        🛒 재료 구매하기
+      </a>
+
+      <!-- 공유하기 버튼 -->
+      <button class="btn share-btn" onclick="sharePage()">
+        📤 공유하기
+      </button>
+    </div>
+
+    <p class="notice">
+      이 포스팅은 쿠팡 파트너스 활동의 일환으로,<br>
+      이에 따른 일정액의 수수료를 제공받을 수 있습니다.
+    </p>
+
+  </div>
+
+  <script>
+    function sharePage() {
+      if (navigator.share) {
+        navigator.share({
+          title: "밀랍랩 만들기",
+          text: "비즈왁스로 만드는 친환경 밀랍랩 만드는 방법이에요!",
+          url: window.location.href
+        });
+      } else {
+        navigator.clipboard.writeText(window.location.href);
+        alert("링크가 복사되었습니다!");
+      }
+    }
+  </script>
+</body>
+</html>
