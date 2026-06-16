@@ -4,52 +4,61 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>밀랍랩 만들기</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/Pretendard-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
 <style>
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
 *{box-sizing:border-box}
+
 body{
   margin:0;
- font-family:'Pretendard','Apple SD Gothic Neo',sans-serif;
+  font-family:'Pretendard', sans-serif;
   background:#fffdf4;
   color:#111;
 }
+
 .page{
   max-width:1000px;
   margin:0 auto;
   background:#fffdf4;
   overflow:hidden;
 }
+
 .notice{
   background:#ffe98d;
   text-align:center;
   padding:10px;
-  font-weight:700;
+  font-size:15px;
+  font-weight:800;
 }
+
 .hero{
   position:relative;
   text-align:center;
-  padding:35px 30px 25px;
+  padding:36px 30px 26px;
 }
+
 .hero:before{
   content:"🎁";
   position:absolute;
-  left:25px;
-  top:35px;
-  font-size:95px;
+  left:34px;
+  top:34px;
+  font-size:90px;
 }
+
 .hero:after{
   content:"🍯";
   position:absolute;
-  right:35px;
-  top:40px;
-  font-size:95px;
+  right:38px;
+  top:38px;
+  font-size:90px;
 }
+
 .hero .small{
   font-size:24px;
-  font-weight:800;
+  font-weight:900;
 }
+
 .hero h1{
   margin:10px 0;
   font-size:76px;
@@ -58,69 +67,83 @@ body{
   font-weight:900;
   letter-spacing:-4px;
 }
+
 .hero .sub{
   font-size:22px;
+  font-weight:700;
   font-style:italic;
 }
 
 .prep-box{
   margin:25px 30px;
-  border:1.8px solid #214d18;
-  border-radius:18px;
-  padding:28px 35px;
+  border:2px solid #214d18;
+  border-radius:20px;
+  padding:28px 36px;
   display:grid;
   grid-template-columns:1fr 1px 1fr;
   gap:35px;
   align-items:center;
   background:#fffefa;
 }
+
 .badge{
   display:inline-block;
   background:#1f4d16;
   color:white;
-  padding:8px 28px;
+  padding:8px 30px;
   border-radius:999px;
-  font-size:22px;
+  font-size:23px;
   font-weight:900;
   margin-bottom:18px;
 }
+
 .materials{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:18px 30px;
-  font-size:21px;
-  font-weight:700;
+  gap:18px 28px;
+  font-size:20px;
+  font-weight:800;
 }
+
 .materials div:before{
   content:"●";
   color:#1f4d16;
-  margin-right:10px;
+  margin-right:9px;
 }
+
 .line{
   height:150px;
   background:#c9d3bd;
 }
+
 .buy-area{
   text-align:center;
 }
+
 .buy-area h2{
   margin:0 0 18px;
   font-size:32px;
   color:#1f4d16;
+  font-weight:900;
 }
+
 .buy-btn{
   display:block;
   background:#ffd400;
   color:#111;
   text-decoration:none;
-  border-radius:12px;
+  border-radius:14px;
   padding:18px 20px;
-  font-size:34px;
+  font-size:32px;
   font-weight:900;
+  box-shadow:0 4px 0 #e2b900;
 }
+
 .buy-area p{
-  margin:14px 0 0;
+  margin:15px 0 0;
   font-size:17px;
+  font-weight:600;
+  line-height:1.5;
 }
 
 .section-title{
@@ -128,18 +151,20 @@ body{
   color:#1f4d16;
   font-size:34px;
   font-weight:900;
-  margin:28px 0 20px;
+  margin:30px 0 22px;
 }
 
 .steps{
   padding:0 30px;
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:28px 18px;
+  gap:30px 18px;
 }
+
 .step{
   position:relative;
 }
+
 .num{
   position:absolute;
   left:-8px;
@@ -155,9 +180,10 @@ body{
   font-size:20px;
   z-index:2;
 }
+
 .img{
   height:160px;
-  border-radius:14px;
+  border-radius:16px;
   background:#f7ead6;
   display:flex;
   align-items:center;
@@ -165,16 +191,21 @@ body{
   font-size:62px;
   border:1px solid #eadcc7;
 }
+
 .step h3{
   font-size:18px;
+  font-weight:900;
   margin:12px 0 7px;
   line-height:1.35;
 }
+
 .step p{
   font-size:15px;
+  font-weight:500;
   line-height:1.55;
   margin:0;
 }
+
 .complete{
   border:1.5px solid #b8c7a8;
   border-radius:16px;
@@ -183,11 +214,20 @@ body{
   text-align:center;
   min-height:245px;
 }
+
 .complete h2{
   color:#1f4d16;
   font-size:30px;
+  font-weight:900;
   margin:0 0 14px;
 }
+
+.complete p{
+  font-size:16px;
+  font-weight:600;
+  line-height:1.6;
+}
+
 .video-btn{
   display:block;
   margin-top:20px;
@@ -198,6 +238,7 @@ body{
   padding:15px;
   font-size:20px;
   font-weight:900;
+  line-height:1.4;
 }
 
 .tips{
@@ -207,26 +248,37 @@ body{
   background:#fffef8;
   padding:18px;
 }
+
 .tips h2{
   text-align:center;
   color:#1f4d16;
+  font-size:24px;
+  font-weight:900;
   margin:0 0 18px;
 }
+
 .tip-grid{
   display:grid;
   grid-template-columns:repeat(5,1fr);
 }
+
 .tip{
   padding:0 14px;
   text-align:center;
   border-left:1px solid #ddd;
   font-size:15px;
+  font-weight:500;
   line-height:1.55;
 }
-.tip:first-child{border-left:none}
+
+.tip:first-child{
+  border-left:none;
+}
+
 .tip b{
   display:block;
   font-size:18px;
+  font-weight:900;
   margin-bottom:8px;
   color:#1f4d16;
 }
@@ -235,10 +287,12 @@ body{
   text-align:center;
   padding:0 30px 30px;
 }
+
 .share p{
   font-weight:900;
   margin-bottom:10px;
 }
+
 .share button{
   background:#ffd400;
   border:none;
@@ -246,7 +300,9 @@ body{
   padding:12px 34px;
   font-size:18px;
   font-weight:900;
+  cursor:pointer;
 }
+
 .copy{
   background:white!important;
   border:1px solid #b8c7a8!important;
@@ -254,20 +310,40 @@ body{
 }
 
 @media(max-width:700px){
-  .page{max-width:430px}
+  .page{
+    max-width:430px;
+  }
+
   .hero{
     padding:28px 16px 18px;
   }
-  .hero:before,.hero:after{
+
+  .hero:before,
+  .hero:after{
     font-size:48px;
     top:18px;
   }
+
+  .hero:before{
+    left:15px;
+  }
+
+  .hero:after{
+    right:15px;
+  }
+
   .hero h1{
     font-size:48px;
     letter-spacing:-2px;
   }
-  .hero .small{font-size:17px}
-  .hero .sub{font-size:15px}
+
+  .hero .small{
+    font-size:17px;
+  }
+
+  .hero .sub{
+    font-size:15px;
+  }
 
   .prep-box{
     margin:18px;
@@ -275,23 +351,44 @@ body{
     grid-template-columns:1fr;
     gap:18px;
   }
-  .line{display:none}
+
+  .line{
+    display:none;
+  }
+
   .materials{
     grid-template-columns:1fr 1fr;
     font-size:16px;
     gap:12px;
   }
-  .buy-area h2{font-size:26px}
-  .buy-btn{font-size:24px;padding:16px}
+
+  .buy-area h2{
+    font-size:26px;
+  }
+
+  .buy-btn{
+    font-size:24px;
+    padding:16px;
+  }
 
   .steps{
     grid-template-columns:1fr 1fr;
     padding:0 18px;
     gap:24px 14px;
   }
-  .img{height:120px;font-size:46px}
-  .step h3{font-size:15px}
-  .step p{font-size:13px}
+
+  .img{
+    height:120px;
+    font-size:46px;
+  }
+
+  .step h3{
+    font-size:15px;
+  }
+
+  .step p{
+    font-size:13px;
+  }
 
   .complete{
     grid-column:span 2;
@@ -301,12 +398,26 @@ body{
   .tip-grid{
     grid-template-columns:1fr;
   }
+
   .tip{
     border-left:none;
     border-top:1px solid #ddd;
     padding:14px 0;
   }
-  .tip:first-child{border-top:none}
+
+  .tip:first-child{
+    border-top:none;
+  }
+
+  .share button{
+    display:block;
+    width:100%;
+    margin:8px 0;
+  }
+
+  .copy{
+    margin-left:0;
+  }
 }
 </style>
 </head>
@@ -314,7 +425,9 @@ body{
 <body>
 <div class="page">
 
-  <div class="notice">📢 쿠팡 파트너스 활동의 일환으로 일정 수수료를 제공받습니다.</div>
+  <div class="notice">
+    📢 쿠팡 파트너스 활동의 일환으로 일정 수수료를 제공받습니다.
+  </div>
 
   <section class="hero">
     <div class="small">🐝 비즈왁스로 만드는 친환경 랩</div>
@@ -325,6 +438,7 @@ body{
   <section class="prep-box">
     <div>
       <div class="badge">준비물</div>
+
       <div class="materials">
         <div>100% 면 천 또는 광목천</div>
         <div>종이호일</div>
@@ -337,10 +451,12 @@ body{
 
     <div class="buy-area">
       <h2>⌁ 재료 구매하기 ⌁</h2>
+
       <a class="buy-btn" href="여기에_쿠팡링크_넣기" target="_blank">
         🛒 비즈왁스 구매하기 〉
       </a>
-      <p>비즈왁스로 만드는 친환경 랩! 지금 바로 준비해보세요.</p>
+
+      <p>비즈왁스로 만드는 친환경 랩!<br>지금 바로 준비해보세요.</p>
     </div>
   </section>
 
@@ -400,6 +516,7 @@ body{
     <div class="complete">
       <h2>🌿 완성!</h2>
       <p>자연을 위한 작은 실천,<br>밀랍랩으로 시작해보세요.</p>
+
       <a class="video-btn" href="여기에_영상링크_넣기" target="_blank">
         ▶ 만드는 법<br>참고 영상 보기
       </a>
