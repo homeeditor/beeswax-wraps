@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>밀랍랩 만들기</title>
 
 <style>
@@ -10,324 +10,436 @@
 body{
   margin:0;
   font-family:"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
-  background:#fffdf6;
-  color:#102d0f;
+  background:#fffdf4;
+  color:#111;
 }
-.wrap{
-  max-width:520px;
+.page{
+  max-width:1000px;
   margin:0 auto;
-  background:#fffdf6;
-  padding-bottom:28px;
+  background:#fffdf4;
+  overflow:hidden;
 }
 .notice{
-  background:#ffe98a;
+  background:#ffe98d;
   text-align:center;
-  padding:9px;
-  font-size:13px;
+  padding:10px;
   font-weight:700;
 }
 .hero{
+  position:relative;
   text-align:center;
-  padding:28px 18px 14px;
+  padding:35px 30px 25px;
+}
+.hero:before{
+  content:"🎁";
+  position:absolute;
+  left:25px;
+  top:35px;
+  font-size:95px;
+}
+.hero:after{
+  content:"🍯";
+  position:absolute;
+  right:35px;
+  top:40px;
+  font-size:95px;
+}
+.hero .small{
+  font-size:24px;
+  font-weight:800;
 }
 .hero h1{
-  margin:8px 0;
-  font-size:44px;
-  line-height:1.05;
-  color:#17480f;
+  margin:10px 0;
+  font-size:76px;
+  line-height:1;
+  color:#1f4d16;
   font-weight:900;
+  letter-spacing:-4px;
 }
-.hero p{
-  margin:0;
-  font-size:16px;
+.hero .sub{
+  font-size:22px;
+  font-style:italic;
 }
-.bee{font-size:34px}
 
-.prep{
-  margin:18px;
-  padding:20px;
-  border:1.5px solid #244d1c;
+.prep-box{
+  margin:25px 30px;
+  border:1.8px solid #214d18;
   border-radius:18px;
-  background:#fffef8;
-  display:flex;
-  gap:18px;
+  padding:28px 35px;
+  display:grid;
+  grid-template-columns:1fr 1px 1fr;
+  gap:35px;
   align-items:center;
+  background:#fffefa;
 }
-.prep-left,.prep-right{flex:1}
 .badge{
   display:inline-block;
-  background:#1d4b13;
+  background:#1f4d16;
   color:white;
-  padding:7px 24px;
+  padding:8px 28px;
   border-radius:999px;
+  font-size:22px;
   font-weight:900;
-  margin-bottom:14px;
+  margin-bottom:18px;
 }
-.prep ul{
-  margin:0;
-  padding-left:18px;
-  line-height:2;
-  font-size:15px;
+.materials{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px 30px;
+  font-size:21px;
   font-weight:700;
 }
-.divider{
-  width:1px;
-  height:120px;
-  background:#bcc8af;
+.materials div:before{
+  content:"●";
+  color:#1f4d16;
+  margin-right:10px;
 }
-.prep-right{
+.line{
+  height:150px;
+  background:#c9d3bd;
+}
+.buy-area{
   text-align:center;
 }
-.prep-right h2{
-  margin:0 0 12px;
-  font-size:22px;
-  color:#17480f;
+.buy-area h2{
+  margin:0 0 18px;
+  font-size:32px;
+  color:#1f4d16;
 }
-.buy{
+.buy-btn{
   display:block;
   background:#ffd400;
   color:#111;
   text-decoration:none;
-  padding:16px 8px;
   border-radius:12px;
-  font-size:22px;
+  padding:18px 20px;
+  font-size:34px;
   font-weight:900;
 }
-.prep-right p{
-  font-size:13px;
-  margin:10px 0 0;
+.buy-area p{
+  margin:14px 0 0;
+  font-size:17px;
 }
 
-.title{
+.section-title{
   text-align:center;
-  font-size:26px;
+  color:#1f4d16;
+  font-size:34px;
   font-weight:900;
-  color:#17480f;
-  margin:26px 0 14px;
+  margin:28px 0 20px;
 }
+
 .steps{
-  padding:0 18px;
+  padding:0 30px;
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
+  grid-template-columns:repeat(4,1fr);
+  gap:28px 18px;
 }
 .step{
   position:relative;
 }
 .num{
   position:absolute;
-  top:-8px;
   left:-8px;
-  background:#17480f;
-  color:white;
-  width:30px;
-  height:30px;
+  top:-8px;
+  width:34px;
+  height:34px;
   border-radius:50%;
+  background:#1f4d16;
+  color:white;
+  line-height:34px;
   text-align:center;
-  line-height:30px;
   font-weight:900;
+  font-size:20px;
   z-index:2;
 }
-.photo{
-  height:120px;
+.img{
+  height:160px;
   border-radius:14px;
-  background:#f6ecd8;
+  background:#f7ead6;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:45px;
-  margin-bottom:9px;
-  border:1px solid #eadfc7;
+  font-size:62px;
+  border:1px solid #eadcc7;
 }
 .step h3{
-  font-size:15px;
-  margin:0 0 6px;
-  color:#111;
+  font-size:18px;
+  margin:12px 0 7px;
+  line-height:1.35;
 }
 .step p{
-  margin:0;
-  font-size:13px;
+  font-size:15px;
   line-height:1.55;
-  color:#222;
+  margin:0;
 }
-
 .complete{
-  margin:18px;
-  padding:20px;
   border:1.5px solid #b8c7a8;
-  border-radius:18px;
-  text-align:center;
+  border-radius:16px;
   background:#fffef8;
+  padding:22px;
+  text-align:center;
+  min-height:245px;
 }
 .complete h2{
-  margin:0 0 10px;
-  color:#17480f;
+  color:#1f4d16;
+  font-size:30px;
+  margin:0 0 14px;
 }
-.video{
+.video-btn{
   display:block;
-  margin-top:15px;
-  background:#17480f;
+  margin-top:20px;
+  background:#1f641f;
   color:white;
   text-decoration:none;
-  padding:14px;
   border-radius:12px;
-  font-size:18px;
+  padding:15px;
+  font-size:20px;
   font-weight:900;
 }
 
 .tips{
-  margin:18px;
-  padding:18px;
+  margin:35px 30px 18px;
   border:1.5px solid #b8c7a8;
-  border-radius:18px;
+  border-radius:16px;
   background:#fffef8;
+  padding:18px;
 }
 .tips h2{
   text-align:center;
-  margin:0 0 14px;
-  color:#17480f;
-  font-size:20px;
+  color:#1f4d16;
+  margin:0 0 18px;
+}
+.tip-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
 }
 .tip{
-  border-top:1px solid #ddd;
-  padding:12px 0;
-  font-size:14px;
+  padding:0 14px;
+  text-align:center;
+  border-left:1px solid #ddd;
+  font-size:15px;
   line-height:1.55;
+}
+.tip:first-child{border-left:none}
+.tip b{
+  display:block;
+  font-size:18px;
+  margin-bottom:8px;
+  color:#1f4d16;
 }
 
 .share{
   text-align:center;
-  margin:22px 18px 0;
+  padding:0 30px 30px;
 }
 .share p{
-  font-weight:800;
+  font-weight:900;
   margin-bottom:10px;
 }
 .share button{
+  background:#ffd400;
   border:none;
   border-radius:999px;
-  padding:12px 28px;
-  background:#ffd400;
+  padding:12px 34px;
+  font-size:18px;
   font-weight:900;
-  font-size:16px;
+}
+.copy{
+  background:white!important;
+  border:1px solid #b8c7a8!important;
+  margin-left:10px;
 }
 
-@media(max-width:430px){
-  .hero h1{font-size:38px}
-  .prep{
-    flex-direction:column;
+@media(max-width:700px){
+  .page{max-width:430px}
+  .hero{
+    padding:28px 16px 18px;
   }
-  .divider{
-    display:none;
+  .hero:before,.hero:after{
+    font-size:48px;
+    top:18px;
   }
-  .prep-right{width:100%}
+  .hero h1{
+    font-size:48px;
+    letter-spacing:-2px;
+  }
+  .hero .small{font-size:17px}
+  .hero .sub{font-size:15px}
+
+  .prep-box{
+    margin:18px;
+    padding:22px;
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+  .line{display:none}
+  .materials{
+    grid-template-columns:1fr 1fr;
+    font-size:16px;
+    gap:12px;
+  }
+  .buy-area h2{font-size:26px}
+  .buy-btn{font-size:24px;padding:16px}
+
+  .steps{
+    grid-template-columns:1fr 1fr;
+    padding:0 18px;
+    gap:24px 14px;
+  }
+  .img{height:120px;font-size:46px}
+  .step h3{font-size:15px}
+  .step p{font-size:13px}
+
+  .complete{
+    grid-column:span 2;
+    min-height:auto;
+  }
+
+  .tip-grid{
+    grid-template-columns:1fr;
+  }
+  .tip{
+    border-left:none;
+    border-top:1px solid #ddd;
+    padding:14px 0;
+  }
+  .tip:first-child{border-top:none}
 }
 </style>
 </head>
 
 <body>
-<div class="wrap">
+<div class="page">
 
   <div class="notice">📢 쿠팡 파트너스 활동의 일환으로 일정 수수료를 제공받습니다.</div>
 
   <section class="hero">
-    <div class="bee">🐝</div>
-    <p><b>비즈왁스로 만드는 친환경 랩</b></p>
+    <div class="small">🐝 비즈왁스로 만드는 친환경 랩</div>
     <h1>밀랍랩 만들기</h1>
-    <p>자연을 생각하는 작은 실천, 밀랍랩으로 시작해보세요! 🌿</p>
+    <div class="sub">자연을 생각하는 작은 실천, 밀랍랩으로 시작해보세요! 🌿</div>
   </section>
 
-  <section class="prep">
-    <div class="prep-left">
+  <section class="prep-box">
+    <div>
       <div class="badge">준비물</div>
-      <ul>
-        <li>100% 면 천 또는 광목천</li>
-        <li>천연 밀랍(비즈왁스)</li>
-        <li>종이호일</li>
-        <li>다리미</li>
-      </ul>
+      <div class="materials">
+        <div>100% 면 천 또는 광목천</div>
+        <div>종이호일</div>
+        <div>천연 밀랍(비즈왁스)</div>
+        <div>다리미</div>
+      </div>
     </div>
 
-    <div class="divider"></div>
+    <div class="line"></div>
 
-    <div class="prep-right">
-      <h2>재료 구매하기</h2>
-      <a class="buy" href="여기에_쿠팡링크" target="_blank">🛒 비즈왁스 구매하기 〉</a>
+    <div class="buy-area">
+      <h2>⌁ 재료 구매하기 ⌁</h2>
+      <a class="buy-btn" href="여기에_쿠팡링크_넣기" target="_blank">
+        🛒 비즈왁스 구매하기 〉
+      </a>
       <p>비즈왁스로 만드는 친환경 랩! 지금 바로 준비해보세요.</p>
     </div>
   </section>
 
-  <div class="title">🌿 만드는 방법 🌿</div>
+  <div class="section-title">🌿 만드는 방법 🌿</div>
 
   <section class="steps">
+
     <div class="step">
       <div class="num">1</div>
-      <div class="photo">✂️</div>
+      <div class="img">✂️</div>
       <h3>천을 원하는 크기로 자릅니다.</h3>
       <p>천은 깨끗이 세탁한 후 완전히 건조하여 사용해주세요.</p>
     </div>
 
     <div class="step">
       <div class="num">2</div>
-      <div class="photo">📄</div>
-      <h3>종이호일을 깔고 천을 올립니다.</h3>
+      <div class="img">📄</div>
+      <h3>종이호일을 깔고 그 위에 천을 올립니다.</h3>
       <p>다리미판 또는 평평한 곳에서 작업해주세요.</p>
     </div>
 
     <div class="step">
       <div class="num">3</div>
-      <div class="photo">🟡</div>
-      <h3>비즈왁스를 골고루 뿌립니다.</h3>
+      <div class="img">🟡</div>
+      <h3>비즈왁스를 천 전체에 고르게 뿌립니다.</h3>
       <p>한곳에 몰리지 않도록 얇게 뿌려주세요.</p>
     </div>
 
     <div class="step">
       <div class="num">4</div>
-      <div class="photo">👕</div>
-      <h3>종이호일을 덮고 다림질합니다.</h3>
+      <div class="img">👕</div>
+      <h3>천 위를 종이호일로 덮고 다리미로 다림질합니다.</h3>
       <p>천 전체를 천천히 눌러가며 밀랍을 녹여주세요.</p>
     </div>
 
     <div class="step">
       <div class="num">5</div>
-      <div class="photo">🤲</div>
-      <h3>종이호일을 천천히 떼어냅니다.</h3>
-      <p>밀랍이 천 전체에 스며들면 조심히 떼어주세요.</p>
+      <div class="img">🤲</div>
+      <h3>밀랍이 스며들면 종이호일을 떼어냅니다.</h3>
+      <p>천천히 조심해서 떼어내주세요.</p>
     </div>
 
     <div class="step">
       <div class="num">6</div>
-      <div class="photo">🌬️</div>
-      <h3>30초 정도 흔들어 식혀주세요.</h3>
-      <p>식으면 바로 사용할 수 있어요.</p>
+      <div class="img">🌬️</div>
+      <h3>밀랍랩을 들어 30초 정도 흔들어 식혀주세요.</h3>
+      <p>30초 정도면 금방 굳어 바로 사용할 수 있어요.</p>
     </div>
 
     <div class="step">
       <div class="num">7</div>
-      <div class="photo">✅</div>
+      <div class="img">✅</div>
       <h3>완전히 식으면 완성!</h3>
       <p>바로 사용이 가능해요.</p>
     </div>
-  </section>
 
-  <section class="complete">
-    <h2>🌿 완성!</h2>
-    <p>자연을 위한 작은 실천,<br>밀랍랩으로 시작해보세요.</p>
-    <a class="video" href="여기에_영상링크" target="_blank">▶ 만드는 법 참고 영상 보기</a>
+    <div class="complete">
+      <h2>🌿 완성!</h2>
+      <p>자연을 위한 작은 실천,<br>밀랍랩으로 시작해보세요.</p>
+      <a class="video-btn" href="여기에_영상링크_넣기" target="_blank">
+        ▶ 만드는 법<br>참고 영상 보기
+      </a>
+    </div>
+
   </section>
 
   <section class="tips">
     <h2>💡 밀랍랩 사용 및 관리 Tip</h2>
-    <div class="tip">🌿 <b>처음 사용 시</b><br>손의 온기로 랩을 부드럽게 만든 후 그릇이나 음식에 밀착시켜 사용해주세요.</div>
-    <div class="tip">💧 <b>세척</b><br>찬물 또는 미지근한 물로 가볍게 씻어주세요.</div>
-    <div class="tip">〰️ <b>건조</b><br>직사광선을 피해 통풍이 잘 되는 그늘에서 자연 건조해주세요.</div>
-    <div class="tip">⚠️ <b>주의사항</b><br>뜨거운 음식, 전자레인지, 식기세척기 사용은 피해주세요.</div>
-    <div class="tip">♡ <b>보수</b><br>밀랍이 벗겨졌다면 종이호일 사이에 넣고 다리미로 가볍게 다려주세요.</div>
+
+    <div class="tip-grid">
+      <div class="tip">
+        <b>🌿 처음 사용 시</b>
+        밀랍 특유의 향이 날 수 있으나 시간이 지나면 자연스럽게 사라집니다.
+      </div>
+
+      <div class="tip">
+        <b>💧 세척</b>
+        열에 약하므로 반드시 찬물 또는 미지근한 물로 세척해주세요.
+      </div>
+
+      <div class="tip">
+        <b>〰️ 건조</b>
+        직사광선을 피해 통풍이 잘 되는 그늘에서 자연 건조해주세요.
+      </div>
+
+      <div class="tip">
+        <b>⚠️ 주의사항</b>
+        뜨거운 음식, 전자레인지, 식기세척기 사용은 피해주세요.
+      </div>
+
+      <div class="tip">
+        <b>♡ 보수</b>
+        밀랍이 벗겨졌다면 종이호일 사이에 넣고 다리미로 가볍게 다려주세요.
+      </div>
+    </div>
   </section>
 
   <div class="share">
     <p>이 레시피가 도움이 되셨다면?</p>
     <button onclick="sharePage()">💬 공유하기</button>
+    <button class="copy" onclick="copyLink()">🔗 링크 복사하기</button>
   </div>
 
 </div>
@@ -341,9 +453,13 @@ function sharePage(){
       url:window.location.href
     });
   }else{
-    navigator.clipboard.writeText(window.location.href);
-    alert("링크가 복사되었습니다!");
+    copyLink();
   }
+}
+
+function copyLink(){
+  navigator.clipboard.writeText(window.location.href);
+  alert("링크가 복사되었습니다!");
 }
 </script>
 
