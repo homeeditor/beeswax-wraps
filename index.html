@@ -1,116 +1,472 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>밀랍랩 만들기</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>밀랍랩 만들기</title>
 
-  <style>
-    body {
-      margin: 0;
-      background: #f7f4ea;
-      font-family: "Noto Sans KR", sans-serif;
-      text-align: center;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
 
-    .wrap {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-    }
+<style>
+*{box-sizing:border-box;}
 
-    .poster {
-      width: 100%;
-      border-radius: 18px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-    }
+body{
+  margin:0;
+  background:#fffdf7;
+  color:#1f1f1f;
+  font-family:'Noto Sans KR',sans-serif;
+}
 
-    .btn-area {
-      margin: 28px 0;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
+.wrap{
+  width:100%;
+  max-width:980px;
+  margin:0 auto;
+  padding:24px 14px 40px;
+}
 
-    .btn {
-      display: block;
-      padding: 18px 20px;
-      border-radius: 16px;
-      font-size: 22px;
-      font-weight: 800;
-      text-decoration: none;
-      color: #1f2b16;
-    }
+/* 상단 */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 1.3fr 0.9fr;
+  gap:24px;
+  align-items:center;
+  padding:24px 0 30px;
+  border-bottom:1px solid #e5e5d8;
+}
 
-    .video-btn {
-      background: #eaf3df;
-      border: 2px solid #5c7a3c;
-    }
+.hero-img{
+  width:100%;
+  border-radius:20px;
+  object-fit:cover;
+}
 
-    .buy-btn {
-      background: #ffc400;
-      border: 2px solid #d49b00;
-    }
+.title-box{
+  text-align:center;
+}
 
-    .share-btn {
-      background: #3f6b2f;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
+.bee{
+  font-size:46px;
+  margin-bottom:4px;
+}
 
-    .notice {
-      font-size: 13px;
-      color: #777;
-      margin: 24px 0 10px;
-      line-height: 1.6;
-    }
-  </style>
+h1{
+  font-family:'Jua',sans-serif;
+  font-size:58px;
+  color:#2f421d;
+  margin:0;
+  font-weight:400;
+}
+
+.subtitle{
+  font-size:23px;
+  margin-top:14px;
+}
+
+.material-box{
+  border:1.5px solid #5d7038;
+  border-radius:18px;
+  padding:18px;
+  background:#fffef8;
+}
+
+.material-title{
+  background:#4b622b;
+  color:white;
+  border-radius:999px;
+  padding:8px 20px;
+  font-weight:800;
+  text-align:center;
+  width:max-content;
+  margin:0 auto 16px;
+}
+
+.material-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin:13px 0;
+  font-size:15px;
+}
+
+.material-icon{
+  font-size:26px;
+}
+
+.buy-btn{
+  display:block;
+  margin-top:18px;
+  background:#eef3df;
+  color:#2f421d;
+  text-align:center;
+  text-decoration:none;
+  font-weight:800;
+  padding:13px 10px;
+  border-radius:14px;
+  border:1.5px solid #9baa75;
+}
+
+/* 섹션 제목 */
+.section-title{
+  font-family:'Jua',sans-serif;
+  font-size:34px;
+  color:#4b622b;
+  text-align:center;
+  margin:26px 0 22px;
+}
+
+/* 만드는 방법 */
+.steps{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:16px;
+}
+
+.step-card{
+  background:#fff;
+  border-radius:14px;
+}
+
+.step-card img{
+  width:100%;
+  aspect-ratio:1/0.86;
+  object-fit:cover;
+  border-radius:14px;
+  display:block;
+}
+
+.step-text{
+  display:grid;
+  grid-template-columns:34px 1fr;
+  gap:9px;
+  margin-top:12px;
+  font-size:15px;
+  line-height:1.6;
+}
+
+.num{
+  width:30px;
+  height:30px;
+  background:#4b622b;
+  color:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+}
+
+.step-desc strong{
+  font-size:17px;
+}
+
+/* 완성 박스 */
+.finish-card{
+  border:1.5px solid #8a9b64;
+  border-radius:18px;
+  padding:26px 18px;
+  text-align:center;
+  color:#4b622b;
+  font-size:18px;
+  line-height:1.7;
+  background:#fffef8;
+}
+
+/* 팁 */
+.tip-box{
+  margin-top:36px;
+  border:1.5px solid #8a9b64;
+  border-radius:18px;
+  padding:22px 14px;
+  background:#fffef8;
+}
+
+.tip-title{
+  font-family:'Jua',sans-serif;
+  color:#4b622b;
+  font-size:30px;
+  text-align:center;
+  margin-bottom:18px;
+}
+
+.tips{
+  display:grid;
+  grid-template-columns:repeat(5, 1fr);
+  border:1px solid #9baa75;
+  border-radius:14px;
+  overflow:hidden;
+}
+
+.tip-item{
+  padding:18px 13px;
+  text-align:center;
+  border-right:1px solid #9baa75;
+  font-size:14px;
+  line-height:1.65;
+}
+
+.tip-item:last-child{
+  border-right:none;
+}
+
+.tip-item h3{
+  margin:0 0 10px;
+  font-size:19px;
+  color:#4b622b;
+}
+
+/* 공유 */
+.share{
+  margin-top:28px;
+  text-align:center;
+  color:#4b622b;
+  font-weight:700;
+}
+
+.share-buttons{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-top:14px;
+}
+
+.share-buttons button{
+  border:none;
+  border-radius:14px;
+  padding:13px 24px;
+  font-size:16px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.kakao{
+  background:#fee500;
+}
+
+.copy{
+  background:#efefef;
+}
+
+/* 모바일 */
+@media(max-width:768px){
+  .hero{
+    grid-template-columns:1fr;
+  }
+
+  h1{
+    font-size:44px;
+  }
+
+  .subtitle{
+    font-size:18px;
+  }
+
+  .steps{
+    grid-template-columns:1fr;
+  }
+
+  .tips{
+    grid-template-columns:1fr;
+  }
+
+  .tip-item{
+    border-right:none;
+    border-bottom:1px solid #9baa75;
+  }
+
+  .tip-item:last-child{
+    border-bottom:none;
+  }
+}
+</style>
 </head>
 
 <body>
-  <div class="wrap">
+<div class="wrap">
 
-    <!-- 인포그래픽 이미지 -->
-    <img src="poster.png" alt="밀랍랩 만들기 방법" class="poster" />
+  <section class="hero">
+    <img class="hero-img" src="main.jpg" alt="밀랍랩 재료">
 
-    <div class="btn-area">
-      <!-- 만드는 법 참고 영상 링크 -->
-      <a href="영상링크넣기" target="_blank" class="btn video-btn">
-        ▶ 만드는 법 참고 영상 보기
-      </a>
-
-      <!-- 쿠팡 비즈왁스 링크 -->
-      <a href="쿠팡파트너스링크넣기" target="_blank" class="btn buy-btn">
-        🛒 재료 구매하기
-      </a>
-
-      <!-- 공유하기 버튼 -->
-      <button class="btn share-btn" onclick="sharePage()">
-        📤 공유하기
-      </button>
+    <div class="title-box">
+      <div class="bee">🐝</div>
+      <h1>밀랍랩 만들기</h1>
+      <p class="subtitle">🌿 비즈왁스로 만드는 친환경 랩 🌿</p>
     </div>
 
-    <p class="notice">
-      이 포스팅은 쿠팡 파트너스 활동의 일환으로,<br>
-      이에 따른 일정액의 수수료를 제공받을 수 있습니다.
-    </p>
+    <div class="material-box">
+      <div class="material-title">준비물</div>
 
-  </div>
+      <div class="material-item">
+        <div class="material-icon">◻️</div>
+        <div>100% 면 천 또는 광목천</div>
+      </div>
 
-  <script>
-    function sharePage() {
-      if (navigator.share) {
-        navigator.share({
-          title: "밀랍랩 만들기",
-          text: "비즈왁스로 만드는 친환경 밀랍랩 만드는 방법이에요!",
-          url: window.location.href
-        });
-      } else {
-        navigator.clipboard.writeText(window.location.href);
-        alert("링크가 복사되었습니다!");
-      }
-    }
-  </script>
+      <div class="material-item">
+        <div class="material-icon">🍯</div>
+        <div>천연 밀랍(비즈왁스)</div>
+      </div>
+
+      <div class="material-item">
+        <div class="material-icon">📜</div>
+        <div>종이호일</div>
+      </div>
+
+      <div class="material-item">
+        <div class="material-icon">♨️</div>
+        <div>다리미</div>
+      </div>
+
+      <a class="buy-btn" href="비즈왁스링크" target="_blank">👉 재료 구매하기</a>
+    </div>
+  </section>
+
+  <h2 class="section-title">🌿 만드는 방법 🌿</h2>
+
+  <section class="steps">
+    <div class="step-card">
+      <img src="step1.jpg" alt="천 자르기">
+      <div class="step-text">
+        <div class="num">1</div>
+        <div class="step-desc">
+          <strong>천을 원하는 크기로 자릅니다.</strong><br>
+          천은 깨끗이 세탁한 후 완전히 건조하여 사용해주세요.
+        </div>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <img src="step2.jpg" alt="종이호일 위에 천 올리기">
+      <div class="step-text">
+        <div class="num">2</div>
+        <div class="step-desc">
+          <strong>종이호일을 깔고 그 위에 천을 올립니다.</strong><br>
+          다리미판 또는 평평한 곳에서 작업해주세요.
+        </div>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <img src="step3.jpg" alt="비즈왁스 뿌리기">
+      <div class="step-text">
+        <div class="num">3</div>
+        <div class="step-desc">
+          <strong>비즈왁스를 천 전체에 고르게 뿌립니다.</strong><br>
+          한곳에 몰리지 않도록 얇게 뿌려주세요.
+        </div>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <img src="step4.jpg" alt="다리미질">
+      <div class="step-text">
+        <div class="num">4</div>
+        <div class="step-desc">
+          <strong>천 위를 종이호일로 덮고 다리미로 다림질합니다.</strong><br>
+          천 전체를 천천히 눌러 밀랍을 녹여주세요.
+        </div>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <img src="step5.jpg" alt="종이호일 떼기">
+      <div class="step-text">
+        <div class="num">5</div>
+        <div class="step-desc">
+          <strong>밀랍이 천 전체에 스며들면 종이호일을 떼어냅니다.</strong><br>
+          빈 부분이 있다면 비즈왁스를 조금 더 올려주세요.
+        </div>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <img src="step6.jpg" alt="식히기">
+      <div class="step-text">
+        <div class="num">6</div>
+        <div class="step-desc">
+          <strong>밀랍랩을 들어 30초 정도 흔들어 식혀주세요.</strong><br>
+          금방 굳어 바로 사용할 수 있어요.
+        </div>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <img src="step7.jpg" alt="완성">
+      <div class="step-text">
+        <div class="num">7</div>
+        <div class="step-desc">
+          <strong>완전히 식으면 완성!</strong><br>
+          바로 사용이 가능해요.
+        </div>
+      </div>
+    </div>
+
+    <div class="finish-card">
+      <h3>🌿 완성!</h3>
+      자연을 위한 작은 실천,<br>
+      밀랍랩으로 시작해보세요.
+      <div style="font-size:34px;margin-top:16px;">♡</div>
+    </div>
+  </section>
+
+  <section class="tip-box">
+    <div class="tip-title">💡 밀랍랩 사용 및 관리 Tip</div>
+
+    <div class="tips">
+      <div class="tip-item">
+        <h3>🌿 처음 사용 시</h3>
+        밀랍 특유의 향이 날 수 있으나 시간이 지나면 자연스럽게 사라집니다.
+      </div>
+
+      <div class="tip-item">
+        <h3>💧 세척</h3>
+        열에 약하므로 반드시 찬물 또는 미지근한 물로 세척해주세요.
+      </div>
+
+      <div class="tip-item">
+        <h3>〰️ 건조</h3>
+        직사광선을 피해 통풍이 잘 되는 그늘에서 자연 건조해주세요.
+      </div>
+
+      <div class="tip-item">
+        <h3>❕ 주의사항</h3>
+        뜨거운 음식, 전자레인지, 식기세척기 사용은 피해주세요.
+      </div>
+
+      <div class="tip-item">
+        <h3>♡ 보수</h3>
+        밀랍이 벗겨졌다면 종이호일 사이에 넣고 다리미로 다시 녹여주세요.
+      </div>
+    </div>
+  </section>
+
+  <section class="share">
+    🌿 자연을 위한 작은 실천, 밀랍랩으로 시작해보세요. 🌿
+
+    <div class="share-buttons">
+      <button class="kakao" onclick="sharePage()">💬 카카오톡 공유</button>
+      <button class="copy" onclick="copyLink()">🔗 링크 복사</button>
+    </div>
+  </section>
+
+</div>
+
+<script>
+function copyLink(){
+  navigator.clipboard.writeText(window.location.href);
+  alert("링크가 복사됐어요!");
+}
+
+function sharePage(){
+  if(navigator.share){
+    navigator.share({
+      title:"밀랍랩 만들기",
+      text:"비즈왁스로 만드는 친환경 랩 🌿",
+      url:window.location.href
+    });
+  }else{
+    copyLink();
+  }
+}
+</script>
+
 </body>
 </html>
