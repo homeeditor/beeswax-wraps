@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>밀랍랩 만들기</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&family=Jua&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -77,9 +77,11 @@ body{
 }
 
 .hero .sub{
-  font-size:20px;
-  font-weight:500;
-  font-style:italic;
+  font-family:'Gaegu', cursive;
+  font-size:24px;
+  font-weight:700;
+  font-style:normal;
+  letter-spacing:-0.5px;
 }
 
 .prep-box{
@@ -108,12 +110,11 @@ body{
 
 .materials{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px 28px;
-  font-size:20px;
+  grid-template-columns:1fr;
+  gap:8px;
+  font-size:18px;
   font-weight:700;
 }
-
 .materials div:before{
   content:"●";
   color:#1f4d16;
@@ -375,11 +376,11 @@ body{
     display:none;
   }
 
-  .materials{
-    grid-template-columns:1fr 1fr;
-    font-size:16px;
-    gap:12px;
-  }
+ .materials{
+  grid-template-columns:1fr;
+  font-size:15px;
+  gap:8px;
+}
 
   .buy-area h2{
     font-size:30px;
